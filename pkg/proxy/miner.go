@@ -1,7 +1,7 @@
 package proxy
 
 import (
-	"../util"
+	"github.com/jimmystewpot/ether-proxy/pkg/util"
 	"log"
 	"math/big"
 	"strconv"

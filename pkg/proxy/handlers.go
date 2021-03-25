@@ -4,7 +4,7 @@ import (
 	"log"
 	"strconv"
 
-	"../util"
+	"github.com/jimmystewpot/ether-proxy/pkg/util"
 )
 
 func (s *ProxyServer) handleGetWorkRPC(cs *Session, diff, id string) (reply []string, errorReply *ErrorReply) {

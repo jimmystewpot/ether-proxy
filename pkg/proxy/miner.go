@@ -1,7 +1,6 @@
 package proxy
 
 import (
-	"github.com/jimmystewpot/ether-proxy/pkg/util"
 	"log"
 	"math/big"
 	"strconv"
@@ -10,11 +9,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/ethash"
+	"github.com/jimmystewpot/ether-proxy/pkg/util"
+
 	"github.com/ethereum/go-ethereum/common"
+	ethash "github.com/jimmystewpot/ethereum-ethash"
 )
 
-var hasher = ethash.New()
+var (
+	hasher = ethash.New()
+)
 
 type Miner struct {
 	sync.RWMutex

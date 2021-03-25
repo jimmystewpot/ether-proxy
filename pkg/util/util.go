@@ -10,7 +10,9 @@ import (
 	"github.com/ethereum/go-ethereum/common/math"
 )
 
-var pow256 = math.BigPow(2, 256)
+var (
+	pow256 = math.BigPow(2, 256)
+)
 
 func Random() string {
 	min := int64(100000000000000)
@@ -27,7 +29,7 @@ func MakeTargetHex(minerDifficulty float64) string {
 	minerAdjustedDifficulty := int64(minerDifficulty * 1000000 * 100)
 	difficulty := big.NewInt(minerAdjustedDifficulty)
 	diff1 := new(big.Int).Div(pow256, difficulty)
-	return string(common.ToHex(diff1.Bytes()))
+	return string(common.Bytes2Hex(diff1.Bytes()))
 }
 
 func TargetHexToDiff(targetHex string) *big.Int {

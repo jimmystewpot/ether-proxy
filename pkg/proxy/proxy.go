@@ -13,7 +13,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"../rpc"
+	"github.com/jimmystewpot/ether-proxy/pkg/rpc"
 )
 
 type ProxyServer struct {

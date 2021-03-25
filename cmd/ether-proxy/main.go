@@ -15,7 +15,9 @@ import (
 	"github.com/yvasiyarov/gorelic"
 )
 
-var cfg proxy.Config
+var (
+	cfg proxy.Config
+)
 
 func startProxy() {
 	if cfg.Threads > 0 {

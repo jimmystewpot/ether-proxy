@@ -13,6 +13,7 @@ import (
 )
 
 type RPCClient struct {
+	FailsCount, Accepts, Rejects uint64
 	sync.RWMutex
 	Url              *url.URL
 	Name             string
@@ -20,11 +21,8 @@ type RPCClient struct {
 	sick             bool
 	sickRate         int
 	successRate      int
-	Accepts          uint64
-	Rejects          uint64
 	LastSubmissionAt int64
 	client           *http.Client
-	FailsCount       uint64
 }
 
 type GetBlockReply struct {
